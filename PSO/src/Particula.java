@@ -7,6 +7,7 @@ public class Particula {
 	final static int VMAX = 1;
 	double[] actual = null;
 	double[] pBest = null;
+	double[] pBestVecino = null;
 	double actualFitness = 0.0;
 	double pFitness = 0.0;
 	
@@ -39,7 +40,7 @@ public class Particula {
 
 
 	public Particula() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 
@@ -52,6 +53,14 @@ public class Particula {
 
 	public void setpBest(double[] pBest) {
 		this.pBest = pBest;
+	}
+	
+	public double[] getpBestVecino() {
+		return pBestVecino;
+	}
+
+	public void setpBestVecino(double[] pBestVecino) {
+		this.pBestVecino = pBestVecino;
 	}
 
 	public double getActualFitness() {
@@ -86,14 +95,16 @@ public class Particula {
 		ArraysUtil.copy(pBest, this.pBest);
 	}
 	
-	//Cálcula la distancia entre las componentes actuales de las partículas.
+	//Cï¿½lcula la distancia entre las componentes actuales de las partï¿½culas.
 	public double getDistanciaActuales(Particula part){
 		double sumaComponentes = 0;
+		double distAux= 0;
 		for(int i = 0; i < part.getActual().length;i++){
 			sumaComponentes += Math.pow(part.getActual()[i] - this.getActual()[i], 2);
 		}
-		System.out.println(sumaComponentes);
-		return Math.sqrt(sumaComponentes);
+		distAux = Math.sqrt(sumaComponentes);
+		System.out.println(distAux);
+		return distAux;
 	}
 
 	public void moverParticula(movmain instance){
@@ -118,12 +129,12 @@ public class Particula {
         }
 	}
 /*
- * MŽtodo encargado de ajustar el vector v antes de realizar el moviemiento de las particulas
- * para ello recibe por un lado los dos par‡metros que van a decidir la evoluci—n del algoritmo,
+ * Mï¿½todo encargado de ajustar el vector v antes de realizar el moviemiento de las particulas
+ * para ello recibe por un lado los dos parï¿½metros que van a decidir la evoluciï¿½n del algoritmo,
  * por un lado la parte cognitiva y por otro la parte social.
  * 
- * Para esta parte social tambiŽn es necesario recibir la mejor soluci—n existente hasta el momento
- * en la nube de part’culas.
+ * Para esta parte social tambiï¿½n es necesario recibir la mejor soluciï¿½n existente hasta el momento
+ * en la nube de partï¿½culas.
  * 
  * */
 	public void ajustarGradiante(double rCognitivo, double rSocial, double[] mejorSolNube) {
@@ -132,7 +143,7 @@ public class Particula {
 		//ArraysUtil.mostrar(this.getGradiente());
 		for (int i = 0; i < pBest.length;i++){
 			double aleatorio = rnd.nextDouble();
-			double factorCognitivo = rCognitivo*aleatorio*(this.getpBest()[i]-this.getActual()[i]);
+			double factorCognitivo = rCognitivo*aleatorio*(this.getpBestVecino()[i]-this.getActual()[i]);
 			//System.out.println("FactorCognitivo = "+rCognitivo+"*"+aleatorio+"*("+this.getpBest()[i]+"-"+this.getActual()[i]+") = "+ factorCognitivo);	
 			aleatorio = rnd.nextDouble();
 			double factorSocial = rSocial*aleatorio*(mejorSolNube[i]-this.getActual()[i]);
@@ -144,6 +155,21 @@ public class Particula {
 	}
 
 
+	public void calcularMejorVecino(Particula[] nube, double distanciaVecino) {
+		//Ojo si no hay mejor vecino pongo mi mejor situaciÃ³n en el tiempo.
+		Particula vecinoAux = new Particula();
+		for(int i = 0;i<nube.length;i++){
+			if (this.getDistanciaActuales(nube[i]) < distanciaVecino){ //Si es de la vecindad
+				if(nube[i].getActualFitness()>vecinoAux.getActualFitness()){ // Si es mejor que el mejor vecino de momento
+					vecinoAux = nube[i];
+				}
+				
+			}
+		}
+		// Le asigno al pBestVecino el vecino encontrado.
+		this.setpBestVecino(vecinoAux.getActual());	
+	}
+	
 	public void mostrar() {
 		System.out.print("Particula: Sol actual:");
 		ArraysUtil.mostrar(actual);
@@ -166,6 +192,9 @@ public class Particula {
 		System.out.println(part1.getDistanciaActuales(part2));
 		
 	}
+
+
+	
 	
 	
 }
