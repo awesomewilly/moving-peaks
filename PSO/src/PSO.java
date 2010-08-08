@@ -17,9 +17,7 @@ import peaks.movpeaks;
 public class PSO {
 
 	private static final int NUM_PARTICULAS = 10;
-	private static final int NUM_CUADRANTES = 5;
 	private static final int NUM_ITERACIONES = 100;
-	private static final int PORC_VECINDAD = 20; //Se trata del porcentaje de distancia que debe existir entre dos part�culas para poder ser considerada vecina
 	private static movmain instance = new movmain();
 	 
 	
