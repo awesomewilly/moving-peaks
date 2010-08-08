@@ -10,7 +10,7 @@ import peaks.movmain;
 import peaks.movpeaks;
 
 /**
- * @author Vicente Belinchón González
+ * @author Vicente Belinchï¿½n Gonzï¿½lez
  *
  */
 
@@ -19,18 +19,18 @@ public class PSO {
 	private static final int NUM_PARTICULAS = 10;
 	private static final int NUM_CUADRANTES = 5;
 	private static final int NUM_ITERACIONES = 100;
-	private static final int PORC_VECINDAD = 20; //Se trata del porcentaje de distancia que debe existir entre dos part’culas para poder ser considerada vecina
+	private static final int PORC_VECINDAD = 20; //Se trata del porcentaje de distancia que debe existir entre dos partï¿½culas para poder ser considerada vecina
 	private static movmain instance = new movmain();
 	private double ratios [][] = null;  
 	
 	
 	/*
 	 * Kennedy identifica 4 tipos de algoritmos de PSO
-	 * en funci—n de los valores de rCognitivo y rSocial
+	 * en funciï¿½n de los valores de rCognitivo y rSocial
 	 * 
 	 * Modelo completo: rCognitivo, rSocial > 0. 
-	 * S—loCognitivo:rCognitivo>0 y rSocial=0. 
-	 * S—loSocial:rCognitivo=0 y rSocial>0.
+	 * Sï¿½loCognitivo:rCognitivo>0 y rSocial=0. 
+	 * Sï¿½loSocial:rCognitivo=0 y rSocial>0.
 	 */
 	double rCognitivo = 1; //ratio cognitivo,
 	double rSocial = 0.5; //ratio social,
@@ -130,11 +130,11 @@ public class PSO {
 		return soluciones;
 		
 	}
-	/*MŽtodo encargado de la inicializaci—n de la nube de particulas
+	/*Mï¿½todo encargado de la inicializaciï¿½n de la nube de particulas
 	 * Se puede generar las soluciones de forma aleatoria o de fomra regular
 	 * Las velocidades se generan aleatoriamente [-Vmax, Vmax] no es conveniente fijarlas a cero,
 	 * ya que no se obtienen buenos resultados.
-	 * Vmax ser‡ la velocidad m‡xima que puede tomar una p‡rticula
+	 * Vmax serï¿½ la velocidad mï¿½xima que puede tomar una pï¿½rticula
 	 */
 	public Particula[] inicializacion(int numParticulas){
 		Particula [] nubeAux = new Particula[numParticulas];
@@ -169,7 +169,7 @@ public class PSO {
 		}
 	}
 	
-	/*Este mŽtodo ser‡ el encargado de devolver la mejor soluci—n 
+	/*Este mï¿½todo serï¿½ el encargado de devolver la mejor soluciï¿½n 
 	 * para una nube de particulas dada*/
 	
 	public double[] mejorSolucionNube(Particula[] nube){
@@ -186,7 +186,7 @@ public class PSO {
 		return optimo;
 	}
 	
-	/*Este mŽtodo ser‡ el encargado de devolver el mejor —ptimo 
+	/*Este mï¿½todo serï¿½ el encargado de devolver el mejor ï¿½ptimo 
 	 * para una nube de particulas dada*/
 	
 	public double mejorOptimoNube(Particula[] nube){
@@ -201,7 +201,7 @@ public class PSO {
 		return mejorFitness;
 	}
 	
-	/*Este mŽtodo ser‡ el encargado de devolver el mejor —ptimo 
+	/*Este mï¿½todo serï¿½ el encargado de devolver el mejor ï¿½ptimo 
 	 * para una nube de particulas dada*/
 	
 	public Particula mejorParticulaNube(Particula[] nube){
@@ -254,7 +254,7 @@ public class PSO {
 		//double [] solucion = LDR.ldr(instance, part.getpBest(), part.getpFitness());
 		//ArraysUtil.mostrar(solucion);
 		//System.out.println(pso.getInstance().getFktnLib().eval_movpeaks(solucion));
-		System.out.println(instance.getFktnLib().get_offline_error());
+		//System.out.println(instance.getFktnLib().get_offline_error());
 		
 	}
 
@@ -262,7 +262,7 @@ public class PSO {
 		Particula[] nube = new Particula[NUM_PARTICULAS];
 		
 		/*
-		 * Array encargado de asociar cada part’cula de la nube, con la mejor part’cula de la vecindad
+		 * Array encargado de asociar cada partï¿½cula de la nube, con la mejor partï¿½cula de la vecindad
 		 */
 		int [] mejoresVecinos = new int [NUM_PARTICULAS];
 		nube = this.inicializacion(NUM_PARTICULAS);
@@ -290,10 +290,10 @@ public class PSO {
 			pBest.mostrar();
 			//nube[(int) (rnd.nextDouble()*nube.length-1)] = pBest;
 			//System.out.print(instance.getFktnLib().getEvals());
-			//System.out.println("Iteraci—n: "+iteraciones);
+			//System.out.println("Iteraciï¿½n: "+iteraciones);
 			iteraciones++;
 			instance.getFktnLib().change_peaks();
-			System.out.println("ERROR:" + instance.getFktnLib().get_offline_error());
+//			System.out.println("ERROR:" + instance.getFktnLib().get_offline_error());
 			instance.getFktnLib().setEvals(0);
 			//System.out.println("NUBE");
 			//mostrarNube(nube);
