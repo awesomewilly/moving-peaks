@@ -21,7 +21,7 @@ public class PSO {
 	private static final int NUM_ITERACIONES = 100;
 	private static final int PORC_VECINDAD = 20; //Se trata del porcentaje de distancia que debe existir entre dos part�culas para poder ser considerada vecina
 	private static movmain instance = new movmain();
-	private double ratios [][] = null;  
+	 
 	
 	
 	/*
@@ -34,6 +34,15 @@ public class PSO {
 	 */
 	double rCognitivo = 1; //ratio cognitivo,
 	double rSocial = 0.5; //ratio social,
+	
+	/*
+	 * Este valor es el encargado de elegir lo grande que será la vecindad, se cogeran todas las 
+	 * partículas que se encuentren a una distancia menor del porcentaje respecto del mayor ratio.
+	 * 
+	 * distanciaVecino < porcentajeVecindad*mayorRatio/100
+	 * 
+	 */
+	double porcentajeVecindad = 10;
 	
 	public movmain getInstance() {
 		return instance;
@@ -63,7 +72,6 @@ public class PSO {
 	 * 
 	 */
 	public PSO() {
-		ratios = new double [NUM_PARTICULAS][NUM_PARTICULAS];
 		instance = new movmain();
 		String [] args = new String[0];
 		//arg[0]= "-h";
@@ -216,56 +224,42 @@ public class PSO {
 		}		
 		return nube[optimo];
 	}
-	/* Calcula la distancia de todos los*/
-	private void calcularRatios(Particula[] nube) {
+	/* Calcula la distancia entre todas las particulas*/
+	private double[][] calcularRatios(Particula[] nube) {
+		double[][] ratios = new double [NUM_PARTICULAS][NUM_PARTICULAS];
 		for(int i = 0;i<nube.length;i++){
-			for(int j =0;j<nube.length;j++){
+			for(int j =0;j<nube.length;j++){	
 				ratios[i][j] = nube[i].getDistanciaActuales(nube[j]);
 			}
 		}
+		return ratios;
 	}
 	
-	
-	/**
-	 * @param args
+	/*  
+	 *  Devuelve el mayor valor del ratio que nos será útil para encontrar con el procentaje de ratio,
+	 *  las vecindades de cada partícula.
 	 */
-	public static void main (String args[]){
-		PSO pso = new PSO();
-		
-		 
-		//Particula[] nube = new Particula[NUM_PARTICULAS];
-		//ArrayList<double[]> soluciones = pso.generarSolucionesRandom(100);
-		//pso.mostrarSoluciones(soluciones);
-		System.out.println("Depurar");
-		
-		//double [] solucion = PSO.getSolRandom();
-		//System.out.println(pso.getInstance().getFktnLib().eval_movpeaks(solucion));
-		//System.out.println("1");
-		//nube = pso.inicializacion(NUM_PARTICULAS);
-		//pso.calcularRatios(nube);
-		//System.out.println("2");
-		
-		//pso.mostrarNube(nube);
-		//pso.mejorSolucionNube(nube);
-		//pso.moverParticulas(nube);
-		Particula part = pso.psoLocal();
-		part.mostrar();
-		System.out.println(instance.getFktnLib().getEvals());
-		//double [] solucion = LDR.ldr(instance, part.getpBest(), part.getpFitness());
-		//ArraysUtil.mostrar(solucion);
-		//System.out.println(pso.getInstance().getFktnLib().eval_movpeaks(solucion));
-		//System.out.println(instance.getFktnLib().get_offline_error());
-		
+	private double getMayorRatio(double[][] ratios) {
+		double mayorRatio = 0;
+		for(int i = 0;i<ratios.length;i++){
+			for(int j =0;j<ratios.length;j++){
+				if (ratios[i][j] > mayorRatio){
+					mayorRatio = ratios[i][j];
+				}
+			}
+		}
+		return mayorRatio;
 	}
-
+	
+	
 	private Particula psoLocal() {
 		Particula[] nube = new Particula[NUM_PARTICULAS];
-		
-		/*
-		 * Array encargado de asociar cada part�cula de la nube, con la mejor part�cula de la vecindad
-		 */
-		int [] mejoresVecinos = new int [NUM_PARTICULAS];
 		nube = this.inicializacion(NUM_PARTICULAS);
+		double ratios [][] = this.calcularRatios(nube);
+		double mayorRatio = this.getMayorRatio(ratios);
+		double distanciaVecino = mayorRatio*porcentajeVecindad/100;
+		
+		
 		int iteraciones = 0;
 		Particula pBest = this.mejorParticulaNube(nube);
 		//for(int j = 0;j<100;j++){
@@ -274,6 +268,7 @@ public class PSO {
 			
 			System.out.println("---------Iteraccion "+iteraciones+"----------------------");
 			for(int i =0;i<nube.length;i++){
+				nube[i].calcularMejorVecino(nube, distanciaVecino); //Se le asignamos a la Partícula
 				nube[i].ajustarGradiante(rCognitivo, rSocial, pBest.getPBest());
 				nube[i].moverParticula(instance);
 			}
@@ -308,6 +303,39 @@ public class PSO {
 		//}
 		return pBest;
 	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main (String args[]){
+		PSO pso = new PSO();
+		
+		 
+		//Particula[] nube = new Particula[NUM_PARTICULAS];
+		//ArrayList<double[]> soluciones = pso.generarSolucionesRandom(100);
+		//pso.mostrarSoluciones(soluciones);
+		System.out.println("Depurar");
+		
+		//double [] solucion = PSO.getSolRandom();
+		//System.out.println(pso.getInstance().getFktnLib().eval_movpeaks(solucion));
+		//System.out.println("1");
+		//nube = pso.inicializacion(NUM_PARTICULAS);
+		//pso.calcularRatios(nube);
+		//System.out.println("2");
+		
+		//pso.mostrarNube(nube);
+		//pso.mejorSolucionNube(nube);
+		//pso.moverParticulas(nube);
+		Particula part = pso.psoLocal();
+		part.mostrar();
+		System.out.println(instance.getFktnLib().getEvals());
+		//double [] solucion = LDR.ldr(instance, part.getpBest(), part.getpFitness());
+		//ArraysUtil.mostrar(solucion);
+		//System.out.println(pso.getInstance().getFktnLib().eval_movpeaks(solucion));
+		//System.out.println(instance.getFktnLib().get_offline_error());
+		
+	}
+
 
 	
 
