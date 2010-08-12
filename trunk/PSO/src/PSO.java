@@ -312,7 +312,7 @@ public class PSO {
 		//Particula[] nube = new Particula[NUM_PARTICULAS];
 		//ArrayList<double[]> soluciones = pso.generarSolucionesRandom(100);
 		//pso.mostrarSoluciones(soluciones);
-		System.out.println("Depurar");
+//		System.out.println("Depurar");
 		
 		//double [] solucion = PSO.getSolRandom();
 		//System.out.println(pso.getInstance().getFktnLib().eval_movpeaks(solucion));
