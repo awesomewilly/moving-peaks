@@ -1,3 +1,4 @@
+import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 
 import peaks.movmain;
@@ -5,7 +6,10 @@ import peaks.movpeaks;
 
 
 public class LDR {
+	private static long numEvals = 4900;
+
 	
+
 
 	/**
 	 * @param instance
@@ -15,20 +19,20 @@ public class LDR {
 	 */
 	public static double[] ldr(movmain instance, double [] solucion, double fitnessSol) {
 		double auxFitness = -1;
-		boolean existeMejora = true; //nœmero de iteracione sin mejora.
+		boolean existeMejora = true; //nï¿½mero de iteracione sin mejora.
 		boolean mejorado = false;
-		//El siguiente array va a conener todas las posibles soluciones de la vecindad para ello se podr‡ realizar una
-		//variaci—n (delta) la cual se podr‡ aplicar a cada coordenada de manera positiva o negativa.
+		//El siguiente array va a conener todas las posibles soluciones de la vecindad para ello se podrï¿½ realizar una
+		//variaciï¿½n (delta) la cual se podrï¿½ aplicar a cada coordenada de manera positiva o negativa.
 		
 		ArrayList<double []> vecindades = new ArrayList<double []>((movpeaks.getGeno_size()*movpeaks.getGeno_size()-1)*2);
 		
 		//while (existeMejora){
-			while (existeMejora && instance.getFktnLib().getEvals() % 4900 > 0){
+			while (existeMejora && instance.getFktnLib().getEvals() %  numEvals > 0){
 			mejorado = false;
 			vecindades = LDR.generaVecindadTotal(solucion); //generarVecindad
 			int i = 0;
 			int veces = 0;
-			while(i < vecindades.size() && !mejorado && instance.getFktnLib().getEvals() % 4900 > 0){
+			while(i < vecindades.size() && !mejorado && instance.getFktnLib().getEvals() % numEvals > 0){
 			  	auxFitness = instance.getFktnLib().eval_movpeaks(vecindades.get(i));
 			  	veces++;
 			  	if (auxFitness > fitnessSol){
@@ -55,20 +59,20 @@ public class LDR {
 
 
 	/**
-	 * Este mŽtodo ser‡ el encargado de generar todas las posibles soluciones cercanas a una dada como par‡metro.
+	 * Este mï¿½todo serï¿½ el encargado de generar todas las posibles soluciones cercanas a una dada como parï¿½metro.
 	 * A este conjunto de posibles soluciones se le denomina vecindad.
-	 * Para realizar el c‡lculo de la misma realizaremos una alteraci—n de la soluci—n recibida, aumentando o disminuyendo 
-	 * las coordenadas en un peque–o factor (delta).
+	 * Para realizar el cï¿½lculo de la misma realizaremos una alteraciï¿½n de la soluciï¿½n recibida, aumentando o disminuyendo 
+	 * las coordenadas en un pequeï¿½o factor (delta).
 	 * 
-	 * Para realizar esta alteraci—n, generamos todas las posibles permutaciones con todos los nœmeros binarios desde 0 hasta 2^n 
-	 * siendo n el tama–o de la soluci—n.
+	 * Para realizar esta alteraciï¿½n, generamos todas las posibles permutaciones con todos los nï¿½meros binarios desde 0 hasta 2^n 
+	 * siendo n el tamaï¿½o de la soluciï¿½n.
 	 * 
-	 * Despœes le aplicamos el peque–o empuj—n a la solucion, primero empujando y despuŽs restando.
+	 * Despï¿½es le aplicamos el pequeï¿½o empujï¿½n a la solucion, primero empujando y despuï¿½s restando.
 	 * 
 	 * Notas: Al solo combinar sumas por un lado y restas por otro me falta combinar las restas con las sumas.
 	 * 
 	 * @param solucion
-	 * @return ArrayList <double[]> cada posici—n contiene una posible soluci—n pertenenciente a la vecindad.  
+	 * @return ArrayList <double[]> cada posiciï¿½n contiene una posible soluciï¿½n pertenenciente a la vecindad.  
 	 */
 	
 	private static ArrayList<double[]> generaVecindad(double [] solucion) {
@@ -88,7 +92,7 @@ public class LDR {
 			System.out.println(binario);
 			for(int j = binario.length()-1; j >= 0; j--){
 				//System.out.print("--" + binario);
-				int valor = binario.charAt(binario.length() - j - 1) - 48; // Pasamos el valor a entero rest‡ndole el valor ASCII del 0
+				int valor = binario.charAt(binario.length() - j - 1) - 48; // Pasamos el valor a entero restï¿½ndole el valor ASCII del 0
 				//System.out.println("Hacemos cambio en  "+(movpeaks.getGeno_size() - j - 1)+" del valor: "+ delta*valor);
 				auxPos[movpeaks.getGeno_size() - j - 1] = auxPos[movpeaks.getGeno_size() - j - 1] + delta*valor;
 				auxNeg[movpeaks.getGeno_size() - j - 1] = auxNeg[movpeaks.getGeno_size() - j - 1] - delta*valor; 
@@ -124,9 +128,9 @@ public class LDR {
 			}
 		
 		}
-		//System.out.println("tama–o: "+vecindades.size());
+		//System.out.println("tamaï¿½o: "+vecindades.size());
 		setVecindades(vecindades, variaciones, delta, solucion);
-		//System.out.println("tama–o: "+vecindades.size());
+		//System.out.println("tamaï¿½o: "+vecindades.size());
 		return vecindades;
 	}
 		
@@ -149,7 +153,7 @@ public class LDR {
 		double [] solucion = pso.getSolRandom();
 
 		/*
-		 * PRUEBA GENERACIîN DE VECINDADES 
+		 * PRUEBA GENERACIï¿½N DE VECINDADES 
 		 */
 		
 		/*ArrayList<double []> vecindades = new ArrayList<double []>((movpeaks.getGeno_size()*movpeaks.getGeno_size()-1)*2);
