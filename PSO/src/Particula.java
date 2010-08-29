@@ -103,7 +103,7 @@ public class Particula {
 			sumaComponentes += Math.pow(part.getActual()[i] - this.getActual()[i], 2);
 		}
 		distAux = Math.sqrt(sumaComponentes);
-		System.out.println(distAux);
+		//System.out.println(distAux);
 		return distAux;
 	}
 
