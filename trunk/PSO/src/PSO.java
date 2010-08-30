@@ -274,7 +274,7 @@ public class PSO {
 	}
 	
 	
-	private Particula psoLocal() {
+	public Particula psoLocal() {
 		Particula[] nube = new Particula[this.getNumParticulas()];
 		nube = this.inicializacion(this.getNumParticulas());
 		double ratios [][] = this.calcularRatios(nube);
