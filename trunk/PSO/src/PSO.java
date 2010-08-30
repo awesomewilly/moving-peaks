@@ -16,8 +16,8 @@ import peaks.movpeaks;
 
 public class PSO {
 
-	private static final int NUM_PARTICULAS = 10;
-	private static final int NUM_ITERACIONES = 100;
+	private int numParticulas = 10;
+	private int numIteraciones = 100;
 	private static movmain instance = new movmain();
 	 
 	
@@ -40,7 +40,7 @@ public class PSO {
 	 * distanciaVecino < porcentajeVecindad*mayorRatio/100
 	 * 
 	 */
-	double porcentajeVecindad = 10;
+	private double porcentajeVecindad = 10;
 	
 	public movmain getInstance() {
 		return instance;
@@ -64,6 +64,30 @@ public class PSO {
 
 	public void setrSocial(double rSocial) {
 		this.rSocial = rSocial;
+	}
+
+	public int getNumParticulas() {
+		return numParticulas;
+	}
+
+	public void setNumParticulas(int numParticulas) {
+		this.numParticulas = numParticulas;
+	}
+
+	public int getNumIteraciones() {
+		return numIteraciones;
+	}
+
+	public void setNumIteraciones(int numIteraciones) {
+		this.numIteraciones = numIteraciones;
+	}
+
+	public double getPorcentajeVecindad() {
+		return porcentajeVecindad;
+	}
+
+	public void setPorcentajeVecindad(double porcentajeVecindad) {
+		this.porcentajeVecindad = porcentajeVecindad;
 	}
 
 	/**
@@ -224,7 +248,7 @@ public class PSO {
 	}
 	/* Calcula la distancia entre todas las particulas*/
 	private double[][] calcularRatios(Particula[] nube) {
-		double[][] ratios = new double [NUM_PARTICULAS][NUM_PARTICULAS];
+		double[][] ratios = new double [this.getNumParticulas()][this.getNumParticulas()];
 		for(int i = 0;i<nube.length;i++){
 			for(int j =0;j<nube.length;j++){	
 				ratios[i][j] = nube[i].getDistanciaActuales(nube[j]);
@@ -251,17 +275,18 @@ public class PSO {
 	
 	
 	private Particula psoLocal() {
-		Particula[] nube = new Particula[NUM_PARTICULAS];
-		nube = this.inicializacion(NUM_PARTICULAS);
+		Particula[] nube = new Particula[this.getNumParticulas()];
+		nube = this.inicializacion(this.getNumParticulas());
 		double ratios [][] = this.calcularRatios(nube);
 		double mayorRatio = this.getMayorRatio(ratios);
 		double distanciaVecino = mayorRatio*porcentajeVecindad/100;
-		
+		Particula pBestAlgoritmo = new Particula();
 		
 		int iteraciones = 0;
 		Particula pBest = this.mejorParticulaNube(nube);
+		pBestAlgoritmo = new Particula();
 		//for(int j = 0;j<100;j++){
-		  while(iteraciones < NUM_ITERACIONES){
+		  while(iteraciones < this.getNumIteraciones()){
 			this.calcularRatios(nube);
 			
 			System.out.println("---------Iteraccion "+iteraciones+"----------------------");
@@ -281,6 +306,12 @@ public class PSO {
 			pBest.setpFitness(instance.getFktnLib().eval_movpeaks(solucion));
 			//System.out.println(instance.getFktnLib().getEvals());
 			pBest.mostrar();
+			if(pBest.getpFitness() > pBestAlgoritmo.getpFitness()){
+				System.out.println("Mejora");
+				pBestAlgoritmo.setpBest(pBest.getpBest());
+				pBestAlgoritmo.setpFitness(pBest.getpFitness());
+			}
+			pBestAlgoritmo.mostrar();
 			//nube[(int) (rnd.nextDouble()*nube.length-1)] = pBest;
 			//System.out.print(instance.getFktnLib().getEvals());
 			//System.out.println("Iteraci�n: "+iteraciones);
@@ -299,7 +330,7 @@ public class PSO {
 		  
 		  //System.out.println(instance.getFktnLib().getEvals());
 		//}
-		return pBest;
+		return pBestAlgoritmo;
 	}
 	
 	/**

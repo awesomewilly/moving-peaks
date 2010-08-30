@@ -5,9 +5,9 @@ import peaks.movmain;
 
 public class Particula {
 	final static int VMAX = 1;
-	double[] actual = null;
-	double[] pBest = null;
-	double[] pBestVecino = null;
+	double[] actual = new double[5];
+	double[] pBest = new double[5];
+	double[] pBestVecino = new double[5];
 	double actualFitness = 0.0;
 	double pFitness = 0.0;
 	
