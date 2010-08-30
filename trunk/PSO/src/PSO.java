@@ -307,7 +307,6 @@ public class PSO {
 			//System.out.println(instance.getFktnLib().getEvals());
 			pBest.mostrar();
 			if(pBest.getpFitness() > pBestAlgoritmo.getpFitness()){
-				System.out.println("Mejora");
 				pBestAlgoritmo.setpBest(pBest.getpBest());
 				pBestAlgoritmo.setpFitness(pBest.getpFitness());
 			}
