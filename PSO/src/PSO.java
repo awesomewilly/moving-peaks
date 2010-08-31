@@ -289,7 +289,7 @@ public class PSO {
 		  while(iteraciones < this.getNumIteraciones()){
 			this.calcularRatios(nube);
 			
-			System.out.println("---------Iteraccion "+iteraciones+"----------------------");
+			//System.out.println("---------Iteraccion "+iteraciones+"----------------------");
 			for(int i =0;i<nube.length;i++){
 				nube[i].calcularMejorVecino(nube, distanciaVecino); //Se le asignamos a la Partícula
 				nube[i].ajustarGradiante(rCognitivo, rSocial, pBest.getPBest());
@@ -300,24 +300,29 @@ public class PSO {
 			//System.out.println("FIN_NUBE");
 			pBest = this.mejorParticulaNube(nube);
 			//pBest.mostrar();
+			
+			/*Si se aplica búsqueda local*/
 			double [] solucion = LDR.ldr(this.getInstance(), pBest.getpBest(), pBest.getpFitness());
-			//ArraysUtil.mostrar(solucion);
 			pBest.setpBest(solucion);
 			pBest.setpFitness(instance.getFktnLib().eval_movpeaks(solucion));
+//			/*FIN de aplicar busq. local*/
 			//System.out.println(instance.getFktnLib().getEvals());
-			pBest.mostrar();
+			System.out.println(pBest.getpFitness());
 			if(pBest.getpFitness() > pBestAlgoritmo.getpFitness()){
 				pBestAlgoritmo.setpBest(pBest.getpBest());
 				pBestAlgoritmo.setpFitness(pBest.getpFitness());
 			}
-			pBestAlgoritmo.mostrar();
+			//pBestAlgoritmo.mostrar();
 			//nube[(int) (rnd.nextDouble()*nube.length-1)] = pBest;
 			//System.out.print(instance.getFktnLib().getEvals());
 			//System.out.println("Iteraci�n: "+iteraciones);
 			iteraciones++;
-			instance.getFktnLib().change_peaks();
-//			System.out.println("ERROR:" + instance.getFktnLib().get_offline_error());
-			instance.getFktnLib().setEvals(0);
+			//System.out.println("Número de iteraciones = "+instance.getFktnLib().getEvals());
+			if(instance.getFktnLib().getEvals() > 4990){
+			  instance.getFktnLib().change_peaks();
+//			  System.out.println("ERROR:" + instance.getFktnLib().get_offline_error());
+			  instance.getFktnLib().setEvals(0);
+			}
 			//System.out.println("NUBE");
 			//mostrarNube(nube);
 			//System.out.println("FIN_NUBE");
