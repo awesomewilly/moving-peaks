@@ -89,7 +89,7 @@ public class LDR {
 			String binario = Integer.toBinaryString(variacion);
 			//System.out.println("Para el binario :" + binario);
 			variaciones.add(binario);
-			System.out.println(binario);
+			//System.out.println(binario);
 			for(int j = binario.length()-1; j >= 0; j--){
 				//System.out.print("--" + binario);
 				int valor = binario.charAt(binario.length() - j - 1) - 48; // Pasamos el valor a entero rest�ndole el valor ASCII del 0
