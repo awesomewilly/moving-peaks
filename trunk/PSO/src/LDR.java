@@ -107,7 +107,7 @@ public class LDR {
 		int numVariaciones = (int)Math.pow(3,movpeaks.getGeno_size());
 		ArrayList<double []> vecindades = new ArrayList<double []>(numVariaciones);
 		int [][] variaciones = new int [numVariaciones][movpeaks.getGeno_size()]; 
-		int delta = 1;
+		int delta = 5;
 		int [] elementos = {-1,0,1};
 		int [] variacion = new int [movpeaks.getGeno_size()];
 		for(int i = 0; i < variacion.length; i++){
@@ -130,7 +130,7 @@ public class LDR {
 		}
 		//System.out.println("tama�o: "+vecindades.size());
 		setVecindades(vecindades, variaciones, delta, solucion);
-		//System.out.println("tama�o: "+vecindades.size());
+		System.out.println("tama�o: "+vecindades.size());
 		return vecindades;
 	}
 		
@@ -163,8 +163,11 @@ public class LDR {
 		*/
 		
 		double fitnessSol = pso.getInstance().getFktnLib().eval_movpeaks(solucion);
-		LDR.ldr(pso.getInstance(), solucion, fitnessSol);
-		
+		ArraysUtil.mostrar(solucion);
+		System.out.println(pso.getInstance().getFktnLib().eval_movpeaks(solucion));
+		solucion = LDR.ldr(pso.getInstance(), solucion, fitnessSol);
+		ArraysUtil.mostrar(solucion);
+		System.out.println(pso.getInstance().getFktnLib().eval_movpeaks(solucion));
 	}
 	
 
