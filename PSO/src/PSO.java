@@ -10,15 +10,27 @@ import peaks.movmain;
 import peaks.movpeaks;
 
 /**
- * @author Vicente Belinch�n Gonz�lez
- *
+ * @author  Vicente Belinch�n Gonz�lez
  */
 
 public class PSO {
 
+	/**
+	 * @uml.property  name="numParticulas"
+	 */
 	private int numParticulas = 10;
+	/**
+	 * @uml.property  name="numIteraciones"
+	 */
 	private int numIteraciones = 100;
+	/**
+	 * @uml.property  name="numEvaluaciones"
+	 */
 	private int numEvaluaciones = 4990;
+	/**
+	 * @uml.property  name="instance"
+	 * @uml.associationEnd  
+	 */
 	private static movmain instance = new movmain();
 	 
 	
@@ -31,7 +43,13 @@ public class PSO {
 	 * S�loCognitivo:rCognitivo>0 y rSocial=0. 
 	 * S�loSocial:rCognitivo=0 y rSocial>0.
 	 */
+	/**
+	 * @uml.property  name="rCognitivo"
+	 */
 	double rCognitivo = 1; //ratio cognitivo,
+	/**
+	 * @uml.property  name="rSocial"
+	 */
 	double rSocial = 0.5; //ratio social,
 	
 	/*
@@ -41,60 +59,119 @@ public class PSO {
 	 * distanciaVecino < porcentajeVecindad*mayorRatio/100
 	 * 
 	 */
+	/**
+	 * @uml.property  name="porcentajeVecindad"
+	 */
 	private double porcentajeVecindad = 10;
 	
+	/**
+	 * @return
+	 * @uml.property  name="instance"
+	 */
 	public movmain getInstance() {
 		return instance;
 	}
 
+	/**
+	 * @param instance
+	 * @uml.property  name="instance"
+	 */
 	public void setInstance(movmain instance) {
 		PSO.instance = instance;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="rCognitivo"
+	 */
 	public double getrCognitivo() {
 		return rCognitivo;
 	}
 
+	/**
+	 * @param rCognitivo
+	 * @uml.property  name="rCognitivo"
+	 */
 	public void setrCognitivo(double rCognitivo) {
 		this.rCognitivo = rCognitivo;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="rSocial"
+	 */
 	public double getrSocial() {
 		return rSocial;
 	}
 
+	/**
+	 * @param rSocial
+	 * @uml.property  name="rSocial"
+	 */
 	public void setrSocial(double rSocial) {
 		this.rSocial = rSocial;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="numParticulas"
+	 */
 	public int getNumParticulas() {
 		return numParticulas;
 	}
 
+	/**
+	 * @param numParticulas
+	 * @uml.property  name="numParticulas"
+	 */
 	public void setNumParticulas(int numParticulas) {
 		this.numParticulas = numParticulas;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="numIteraciones"
+	 */
 	public int getNumIteraciones() {
 		return numIteraciones;
 	}
 
+	/**
+	 * @param numIteraciones
+	 * @uml.property  name="numIteraciones"
+	 */
 	public void setNumIteraciones(int numIteraciones) {
 		this.numIteraciones = numIteraciones;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="porcentajeVecindad"
+	 */
 	public double getPorcentajeVecindad() {
 		return porcentajeVecindad;
 	}
 
+	/**
+	 * @param porcentajeVecindad
+	 * @uml.property  name="porcentajeVecindad"
+	 */
 	public void setPorcentajeVecindad(double porcentajeVecindad) {
 		this.porcentajeVecindad = porcentajeVecindad;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="numEvaluaciones"
+	 */
 	public int getNumEvaluaciones() {
 		return numEvaluaciones;
 	}
 
+	/**
+	 * @param numEvaluaciones
+	 * @uml.property  name="numEvaluaciones"
+	 */
 	public void setNumEvaluaciones(int numEvaluaciones) {
 		this.numEvaluaciones = numEvaluaciones;
 	}
