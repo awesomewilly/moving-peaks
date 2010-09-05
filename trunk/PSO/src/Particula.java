@@ -3,15 +3,36 @@ import java.util.Random;
 import peaks.movmain;
 
 
+/** 
+ * @author  vicenbg
+ */
 public class Particula {
 	final static int VMAX = 1;
+	/**
+	 * @uml.property  name="actual"
+	 */
 	double[] actual = new double[5];
+	/**
+	 * @uml.property  name="pBest"
+	 */
 	double[] pBest = new double[5];
+	/**
+	 * @uml.property  name="pBestVecino"
+	 */
 	double[] pBestVecino = new double[5];
+	/**
+	 * @uml.property  name="actualFitness"
+	 */
 	double actualFitness = 0.0;
+	/**
+	 * @uml.property  name="pFitness"
+	 */
 	double pFitness = 0.0;
 	
 	//Debe de ser una velocidad para cada coordenada del punto
+	/**
+	 * @uml.property  name="gradiente"
+	 */
 	double [] gradiente = null;
 		
 
@@ -44,47 +65,95 @@ public class Particula {
 	}
 
 
+	/**
+	 * @param gradiente
+	 * @uml.property  name="gradiente"
+	 */
 	public void setGradiente(double[] gradiente) {
 		this.gradiente = gradiente;
 	}
+	/**
+	 * @return
+	 * @uml.property  name="pBest"
+	 */
 	public double[] getpBest() {
 		return pBest;
 	}
 
+	/**
+	 * @param pBest
+	 * @uml.property  name="pBest"
+	 */
 	public void setpBest(double[] pBest) {
 		this.pBest = pBest;
 	}
 	
+	/**
+	 * @return
+	 * @uml.property  name="pBestVecino"
+	 */
 	public double[] getpBestVecino() {
 		return pBestVecino;
 	}
 
+	/**
+	 * @param pBestVecino
+	 * @uml.property  name="pBestVecino"
+	 */
 	public void setpBestVecino(double[] pBestVecino) {
 		this.pBestVecino = pBestVecino;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="actualFitness"
+	 */
 	public double getActualFitness() {
 		return actualFitness;
 	}
 
+	/**
+	 * @param actualFitness
+	 * @uml.property  name="actualFitness"
+	 */
 	public void setActualFitness(double actualFitness) {
 		this.actualFitness = actualFitness;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="pFitness"
+	 */
 	public double getpFitness() {
 		return pFitness;
 	}
 
+	/**
+	 * @param pFitness
+	 * @uml.property  name="pFitness"
+	 */
 	public void setpFitness(double pFitness) {
 		this.pFitness = pFitness;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="gradiente"
+	 */
 	public double[] getGradiente() {
 		return gradiente;
 	}
+	/**
+	 * @return
+	 * @uml.property  name="actual"
+	 */
 	public double[] getActual() {
 		return actual;
 	}
+	/**
+	 * @param actual
+	 * @uml.property  name="actual"
+	 */
 	public void setActual(double[] actual) {
 		this.actual = actual;
 	}

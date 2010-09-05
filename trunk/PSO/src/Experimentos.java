@@ -3,15 +3,16 @@
  */
 
 /**
- * @author Vicente Belinchón González
- * 
+ * @author  vicenbg
  */
 public class Experimentos {
 
 	private static final int NUM_EJECUCIONES = 50;// N�mero de iteraciones que
 													// se debe ejecutar el pso
 	/**
-	 * @param args
+	 * @param  args
+	 * @uml.property  name="pso"
+	 * @uml.associationEnd  
 	 */
 
 	PSO pso = new PSO();
