@@ -18,6 +18,7 @@ public class PSO {
 
 	private int numParticulas = 10;
 	private int numIteraciones = 100;
+	private int numEvaluaciones = 4990;
 	private static movmain instance = new movmain();
 	 
 	
@@ -88,6 +89,14 @@ public class PSO {
 
 	public void setPorcentajeVecindad(double porcentajeVecindad) {
 		this.porcentajeVecindad = porcentajeVecindad;
+	}
+
+	public int getNumEvaluaciones() {
+		return numEvaluaciones;
+	}
+
+	public void setNumEvaluaciones(int numEvaluaciones) {
+		this.numEvaluaciones = numEvaluaciones;
 	}
 
 	/**
@@ -307,7 +316,7 @@ public class PSO {
 			pBest.setpFitness(instance.getFktnLib().eval_movpeaks(solucion));
 //			/*FIN de aplicar busq. local*/
 			//System.out.println(instance.getFktnLib().getEvals());
-			System.out.println(pBest.getpFitness());
+			//System.out.println(pBest.getpFitness());
 			if(pBest.getpFitness() > pBestAlgoritmo.getpFitness()){
 				pBestAlgoritmo.setpBest(pBest.getpBest());
 				pBestAlgoritmo.setpFitness(pBest.getpFitness());
@@ -318,7 +327,7 @@ public class PSO {
 			//System.out.println("Iteraci�n: "+iteraciones);
 			iteraciones++;
 			//System.out.println("Número de iteraciones = "+instance.getFktnLib().getEvals());
-			if(instance.getFktnLib().getEvals() > 4990){
+			if(instance.getFktnLib().getEvals() > this.getNumEvaluaciones()){
 			  instance.getFktnLib().change_peaks();
 //			  System.out.println("ERROR:" + instance.getFktnLib().get_offline_error());
 			  instance.getFktnLib().setEvals(0);
@@ -337,6 +346,7 @@ public class PSO {
 		return pBestAlgoritmo;
 	}
 	
+
 	/**
 	 * @param args
 	 */
