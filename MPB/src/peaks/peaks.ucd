@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="909,1165" id="peaks" metadata="uml2-1.0" initialized="true" scrolledY="264" tag="1000" key="32303037303533312D31303030204D50422F766963656E6267">
+  <children xsi:type="editmodel:ClassEditModel" name="movmain" location="345,525" size="90,85" id="peaks/movmain" runTimeClassModel="main([Ljava.lang.String;),run([Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="45,36">
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="peaks/movmain#main([Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="run" id="peaks/movmain#run([Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="peaks/movpeaks@fktnLib+peaks/movmain@" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,42" id="peaks/movpeaks@fktnLib+peaks/movmain@|peaks/movmain#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="fktnLib" location="144,273" id="peaks/movpeaks@fktnLib+peaks/movmain@|peaks/movpeaks#fktnLib" multiplicityLabel="//@children.0/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.0/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - fktnLib" location="201,550" size="38,10" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="201,574" size="5,10" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="movpeaks" location="50,294" size="144,535" id="peaks/movpeaks" runTimeClassModel="geno_size,peak,free_peaks(),getCurrentPeak(),getMaximumPeak(),init_peaks(),change_peaks(),get_offline_error(),pEAKFUNCTIONSPHERE,movpeaks(IIIDDDDDDDIJ),pEAKFUNCTION1,get_offline_performance(),evals,get_right_peak(),get_avg_error(),get_current_error(),getPeakPositions(),getPeakHeights(),getGeno_size(),eval_movpeaks([D),getMaxHeight(),movpeaks(),pEAKFUNCTIONCONE,printPeakData(),getMaxCoordinate(),get_number_of_evals(),dummy_eval([D),getMinCoordinate()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="121,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="evals" id="peaks/movpeaks#evals"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="geno_size" id="peaks/movpeaks#geno_size"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pEAKFUNCTION1" id="peaks/movpeaks#pEAKFUNCTION1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pEAKFUNCTIONCONE" id="peaks/movpeaks#pEAKFUNCTIONCONE"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pEAKFUNCTIONSPHERE" id="peaks/movpeaks#pEAKFUNCTIONSPHERE"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="peak" id="peaks/movpeaks#peak"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="118,378">
+      <children xsi:type="editmodel:MethodEditModel" name="change_peaks" id="peaks/movpeaks#change_peaks()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eval_movpeaks" id="peaks/movpeaks#eval_movpeaks([D)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dummy_eval" id="peaks/movpeaks#dummy_eval([D)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="free_peaks" id="peaks/movpeaks#free_peaks()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCurrentPeak" id="peaks/movpeaks#getCurrentPeak()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMaxCoordinate" id="peaks/movpeaks#getMaxCoordinate()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMaxHeight" id="peaks/movpeaks#getMaxHeight()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMaximumPeak" id="peaks/movpeaks#getMaximumPeak()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMinCoordinate" id="peaks/movpeaks#getMinCoordinate()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPeakHeights" id="peaks/movpeaks#getPeakHeights()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPeakPositions" id="peaks/movpeaks#getPeakPositions()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="get_avg_error" id="peaks/movpeaks#get_avg_error()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="get_current_error" id="peaks/movpeaks#get_current_error()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="get_number_of_evals" id="peaks/movpeaks#get_number_of_evals()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="get_offline_error" id="peaks/movpeaks#get_offline_error()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="get_offline_performance" id="peaks/movpeaks#get_offline_performance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="get_right_peak" id="peaks/movpeaks#get_right_peak()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="init_peaks" id="peaks/movpeaks#init_peaks()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="movpeaks" id="peaks/movpeaks#movpeaks(IIIDDDDDDDIJ)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="movpeaks" id="peaks/movpeaks#movpeaks()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="printPeakData" id="peaks/movpeaks#printPeakData()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="peaks/Basis_Function@bf+peaks/movpeaks@" source="//@children.1" target="//@children.8" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="144,38" id="peaks/Basis_Function@bf+peaks/movpeaks@|peaks/movpeaks#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="bf" location="0,38" id="peaks/Basis_Function@bf+peaks/movpeaks@|peaks/Basis_Function#bf" multiplicityLabel="//@children.1/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.1/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + bf" location="408,315" size="19,10" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="422,339" size="5,10" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="peaks/Peak_Function@pf+peaks/movpeaks@" source="//@children.1" target="//@children.6" targetEnd="//@children.1/@sourceConnections.1/@children.2" label="//@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,33" id="peaks/Peak_Function@pf+peaks/movpeaks@|peaks/movpeaks#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="pf" location="0,59" id="peaks/Peak_Function@pf+peaks/movpeaks@|peaks/Peak_Function#pf" multiplicityLabel="//@children.1/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.1/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + pf" location="389,92" size="19,10" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="403,116" size="5,10" anchorKind="LastPart"/>
+      </children>
+      <bendpoints secondRelativeDimension="-399,218" firstRelativeDimension="-34,0"/>
+      <bendpoints secondRelativeDimension="-399,-1" firstRelativeDimension="-34,-219"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Peak_Function_Hilly" location="50,177" size="144,67" id="peaks/Peak_Function_Hilly" runTimeClassModel="calculate([DI)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="59,18">
+      <children xsi:type="editmodel:MethodEditModel" name="calculate" id="peaks/Peak_Function_Hilly#calculate([DI)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.5/@sourceConnections.0 //@children.3/@sourceConnections.0 //@children.4/@sourceConnections.0 //@children.7/@sourceConnections.0" autoLocated="true" id="peaks/Peak_Function&lt;-peaks/Peak_Function_Hilly" source="//@children.2" target="//@children.6" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="72,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="58,77" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Peak_Function_Sphere" location="401,177" size="158,67" id="peaks/Peak_Function_Sphere" runTimeClassModel="calculate([DI)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="59,18">
+      <children xsi:type="editmodel:MethodEditModel" name="calculate" id="peaks/Peak_Function_Sphere#calculate([DI)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="peaks/Peak_Function&lt;-peaks/Peak_Function_Sphere" source="//@children.3" target="//@children.2/@sourceConnections.0" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="79,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Peak_Function1" location="589,177" size="123,67" id="peaks/Peak_Function1" runTimeClassModel="calculate([DI)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="59,18">
+      <children xsi:type="editmodel:MethodEditModel" name="calculate" id="peaks/Peak_Function1#calculate([DI)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="peaks/Peak_Function&lt;-peaks/Peak_Function1" source="//@children.4" target="//@children.2/@sourceConnections.0" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="61,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Peak_Function_Cone" location="224,177" size="147,67" id="peaks/Peak_Function_Cone" runTimeClassModel="calculate([DI)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="59,18">
+      <children xsi:type="editmodel:MethodEditModel" name="calculate" id="peaks/Peak_Function_Cone#calculate([DI)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="peaks/Peak_Function&lt;-peaks/Peak_Function_Cone" source="//@children.5" target="//@children.2/@sourceConnections.0" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="73,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.1/@sourceConnections.1" name="Peak_Function" location="415,50" size="116,77" id="peaks/Peak_Function" runTimeClassModel="calculate([DI)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="59,18">
+      <children xsi:type="editmodel:MethodEditModel" name="calculate" id="peaks/Peak_Function#calculate([DI)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Peak_Function_Twin" location="742,177" size="147,67" id="peaks/Peak_Function_Twin" runTimeClassModel="calculate([DI)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="59,18">
+      <children xsi:type="editmodel:MethodEditModel" name="calculate" id="peaks/Peak_Function_Twin#calculate([DI)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="peaks/Peak_Function&lt;-peaks/Peak_Function_Twin" source="//@children.7" target="//@children.2/@sourceConnections.0" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="73,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.9/@sourceConnections.0 //@children.1/@sourceConnections.0" name="Basis_Function" location="434,294" size="119,77" id="peaks/Basis_Function" runTimeClassModel="calculate([D)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="59,18">
+      <children xsi:type="editmodel:MethodEditModel" name="calculate" id="peaks/Basis_Function#calculate([D)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Five_Peaks_Basis_Function" location="244,421" size="180,67" id="peaks/Five_Peaks_Basis_Function" runTimeClassModel="calculate([D)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="59,18">
+      <children xsi:type="editmodel:MethodEditModel" name="calculate" id="peaks/Five_Peaks_Basis_Function#calculate([D)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.10/@sourceConnections.0" autoLocated="true" id="peaks/Basis_Function&lt;-peaks/Five_Peaks_Basis_Function" source="//@children.9" target="//@children.8" targetEnd="//@children.9/@sourceConnections.0/@children.1" sourceEnd="//@children.9/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="90,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="59,77" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Constant_Basis_Function" location="454,421" size="171,67" id="peaks/Constant_Basis_Function" runTimeClassModel="calculate([D)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="59,18">
+      <children xsi:type="editmodel:MethodEditModel" name="calculate" id="peaks/Constant_Basis_Function#calculate([D)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="peaks/Basis_Function&lt;-peaks/Constant_Basis_Function" source="//@children.10" target="//@children.9/@sourceConnections.0" targetEnd="//@children.10/@sourceConnections.0/@children.1" sourceEnd="//@children.10/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="85,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=1;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

@@ -3,16 +3,7 @@ package peaks;
 
 
 /**
- * Moving Peaks Function --- 10/99 
- * 
- * Copyright (C) 1999 Juergen Branke.
- * This is free software; you can redistribute it and/or modify it under the
- * terms of the GNU General Public License.
- *
- * This module is an example of how to use the Moving Peaks Evaluation 
- * Function, a dynamic benchmark problem changing over time.
- * 
- * 
+ * Moving Peaks Function --- 10/99  Copyright (C) 1999 Juergen Branke. This is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License. This module is an example of how to use the Moving Peaks Evaluation  Function, a dynamic benchmark problem changing over time.
  */
 
 
@@ -29,6 +20,10 @@ public class movmain {
 		     double widthSeverity,
 		     int peakType,
 		     long seed){*/
+	/**
+	 * @uml.property  name="fktnLib"
+	 * @uml.associationEnd  
+	 */
 	private movpeaks FktnLib = new movpeaks();
 	//Scenario 1
 	//private movpeaks FktnLib = new movpeaks(5,5,5000,2,0.0002,0.2,0.1, 0.0,7.0,0.01,);
@@ -37,6 +32,10 @@ public class movmain {
 	//Scenario 3
 	//private movpeaks FktnLib = new movpeaks();
 	
+	/**
+	 * @return
+	 * @uml.property  name="fktnLib"
+	 */
 	public movpeaks getFktnLib() {
 		return FktnLib;
 	}
