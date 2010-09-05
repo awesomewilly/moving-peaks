@@ -5,16 +5,7 @@ import java.util.*;
 
 
 /**
- * Moving Peaks Function --- 10/99 
- * 
- * Copyright (C) 1999 Juergen Branke.
- * This is free software; you can redistribute it and/or modify it under the
- * terms of the GNU General Public License.
- *
- * This module is an example of how to use the Moving Peaks Evaluation 
- * Function, a dynamic benchmark problem changing over time.
- * 
- * 
+ * Moving Peaks Function --- 10/99  Copyright (C) 1999 Juergen Branke. This is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License. This module is an example of how to use the Moving Peaks Evaluation  Function, a dynamic benchmark problem changing over time.
  */
 
 
@@ -40,6 +31,9 @@ public class movpeaks {
      *  number of dimensions, or the number of double valued genes 
      *  Scenerio 2:  5
      */
+    /**
+	 * @uml.property  name="geno_size"
+	 */
     public static int geno_size = 5;
 
     /*  
@@ -125,8 +119,16 @@ public class movpeaks {
      */
     private double standardwidth = 0.0;
 
+    /** 
+	 * @uml.property name="pf"
+	 * @uml.associationEnd 
+	 */
     public Peak_Function pf = new Peak_Function1();  //  Scenario 1
 
+    /**
+	 * @uml.property  name="bf"
+	 * @uml.associationEnd  
+	 */
     public Basis_Function bf = new Constant_Basis_Function();
 
     /***** END OF PARAMETER SECTION *****/
@@ -141,6 +143,9 @@ public class movpeaks {
     private double avg_error = 0; /* average error so far */
     private double current_error = 0; /* error of the currently best individual */
     private double global_max; /* absolute maximum in the fitness landscape */
+    /**
+	 * @uml.property  name="evals"
+	 */
     private int evals = 0; /* number of evaluations so far */
 
     /* data structure to store peak data */
@@ -219,6 +224,10 @@ public class movpeaks {
 	movnrand = new Random( newMovrandseed );
     }
 
+    /**
+	 * @return
+	 * @uml.property  name="evals"
+	 */
     public int getEvals() {
 		return evals;
 	}
@@ -606,13 +615,21 @@ public class movpeaks {
 	return maxheight;
     }
 
+	/**
+	 * @return
+	 * @uml.property  name="geno_size"
+	 */
 	public static int getGeno_size() {
 		return geno_size;
 	}
 
+	/**
+	 * @param i
+	 * @uml.property  name="evals"
+	 */
 	public void setEvals(int i) {
 		evals = i;
-		
+	
 	}
 
 } //movpeaks
