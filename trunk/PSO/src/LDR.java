@@ -130,7 +130,6 @@ public class LDR {
 		}
 		//System.out.println("tama�o: "+vecindades.size());
 		setVecindades(vecindades, variaciones, delta, solucion);
-		System.out.println("tama�o: "+vecindades.size());
 		return vecindades;
 	}
 		
