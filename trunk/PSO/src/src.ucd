@@ -6,7 +6,7 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.3/@sourceConnections.0 //@children.4/@sourceConnections.2 //@children.5/@sourceConnections.0" name="PSO" location="493,0" size="149,391" id="/PSO" runTimeClassModel="main([Ljava.lang.String;),rCognitivo,getSolRandom(),numEvaluaciones,numIteraciones,numParticulas,generarSolucionesRandom(I),moverParticulas([LParticula;),PSO(),getBestSol(Ljava.util.ArrayList;),mejorSolucionNube([LParticula;),inicializacion(I),psoLocal(),mostrarSoluciones(Ljava.util.ArrayList;),mejorOptimoNube([LParticula;),mejorParticulaNube([LParticula;),mostrarNube([LParticula;),rSocial,porcentajeVecindad">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.3/@sourceConnections.0 //@children.4/@sourceConnections.2 //@children.5/@sourceConnections.0" name="PSO" location="493,0" size="149,391" id="/PSO" runTimeClassModel="main([Ljava.lang.String;),rCognitivo,getSolRandom(),numEvaluaciones,numIteraciones,numParticulas,moverParticulas([LParticula;),generarSolucionesRandom(I),PSO(),getBestSol(Ljava.util.ArrayList;),mejorSolucionNube([LParticula;),inicializacion(I),psoLocal(),mostrarSoluciones(Ljava.util.ArrayList;),mejorOptimoNube([LParticula;),mejorParticulaNube([LParticula;),mostrarNube([LParticula;),rSocial,porcentajeVecindad">
     <children xsi:type="editmodel:CompartmentEditModel" size="124,108">
       <children xsi:type="editmodel:AttributeEditModel" name="numEvaluaciones" id="/PSO#numEvaluaciones"/>
       <children xsi:type="editmodel:AttributeEditModel" name="numIteraciones" id="/PSO#numIteraciones"/>
@@ -28,7 +28,7 @@
       <children xsi:type="editmodel:MethodEditModel" name="mostrarNube" id="/PSO#mostrarNube([LParticula;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="mostrarSoluciones" id="/PSO#mostrarSoluciones(Ljava.util.ArrayList;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="moverParticulas" id="/PSO#moverParticulas([LParticula;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="psoLocal" id="/PSO#psoLocal()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="psoLocal" id="/PSO#psoGlobal()"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" id="/PSO-Standard::Call->/ArraysUtil" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
@@ -41,7 +41,7 @@
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,165" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="68,42"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="/PSO-Standard::Call->/Particula*/PSO-Standard::Instantiate->/Particula*/PSO-Soyatec::Import->/Particula" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.2/@children.2" label="//@children.1/@sourceConnections.2/@children.0" sourceEnd="//@children.1/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="/PSO->Standard::Call" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.2/@children.2" label="//@children.1/@sourceConnections.2/@children.0" sourceEnd="//@children.1/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Instantiate, Call»" size="98,10" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="149,286" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="31,0"/>
@@ -49,7 +49,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0 //@children.3/@sourceConnections.1 //@children.5/@sourceConnections.1" name="ArraysUtil" location="270,360" size="111,556" id="/ArraysUtil" runTimeClassModel="mostrar([D),add([D[D),sum([D),reverse([D),minmax([I),max([I),cruce([I[I),min([D),toIntArray([Z),distancia([I[I),minmax([D),max([D),indexOfMin([I),average([D),equals([I[I),mapTo([DDDDD),numApariciones(I[I),mostrar([I),copy([D[D),swap([III),firstIndexOf([II),reverse([I),min([I),toBooleanArray([II),mapTo([DDD),indexOfMax([I),toStringObj(Ljava.lang.Object;),copy([I[I)">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0 //@children.3/@sourceConnections.1 //@children.5/@sourceConnections.1" name="ArraysUtil" location="270,360" size="111,556" id="/ArraysUtil" runTimeClassModel="mostrar([D),add([D[D),sum([D),reverse([D),minmax([I),max([I),cruce([I[I),min([D),toIntArray([Z),distancia([I[I),minmax([D),max([D),indexOfMin([I),average([D),equals([I[I),mapTo([DDDDD),numApariciones(I[I),mostrar([I),copy([D[D),firstIndexOf([II),swap([III),reverse([I),min([I),toBooleanArray([II),mapTo([DDD),indexOfMax([I),toStringObj(Ljava.lang.Object;),copy([I[I)">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="88,504">
       <children xsi:type="editmodel:MethodEditModel" name="add" id="/ArraysUtil#add([D[D)"/>
@@ -84,7 +84,7 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.1 //@children.1/@sourceConnections.2" name="Particula" location="795,345" size="128,319" id="/Particula" runTimeClassModel="main([Ljava.lang.String;),mostrar(),moverParticula(Lpeaks.movmain;),calcularMejorVecino([LParticula;D),pFitness,ajustarGradiante(DD[D),pBest,getPBest(),Particula(Lpeaks.movmain;),getDistanciaActuales(LParticula;),gradiente,pBestVecino,actual,Particula(),vMAX,setPBest([D),actualFitness">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.1 //@children.1/@sourceConnections.2" name="Particula" location="795,345" size="128,319" id="/Particula" runTimeClassModel="main([Ljava.lang.String;),mostrar(),moverParticula(Lpeaks.movmain;),pFitness,calcularMejorVecino([LParticula;D),ajustarGradiante(DD[D),pBest,getPBest(),Particula(Lpeaks.movmain;),getDistanciaActuales(LParticula;),gradiente,pBestVecino,actual,vMAX,Particula(),setPBest([D),actualFitness">
     <children xsi:type="editmodel:CompartmentEditModel" size="99,126">
       <children xsi:type="editmodel:AttributeEditModel" name="actual" id="/Particula#actual"/>
       <children xsi:type="editmodel:AttributeEditModel" name="actualFitness" id="/Particula#actualFitness"/>
@@ -139,14 +139,14 @@
         <children xsi:type="editmodel:LabelEditModel" name="1" location="577,398" size="5,10" anchorKind="LastPart"/>
       </children>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/Experimentos-Standard::Call->/Particula*/Experimentos-Soyatec::Access->/Particula*/Experimentos-Standard::Instantiate->/Particula*/Experimentos-Soyatec::Import->/Particula" source="//@children.4" target="//@children.3" targetEnd="//@children.4/@sourceConnections.1/@children.2" label="//@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Instantiate, Call, Access»" size="130,10" anchorKind="MiddlePart"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/Experimentos->Standard::Call" source="//@children.4" target="//@children.3" targetEnd="//@children.4/@sourceConnections.1/@children.2" label="//@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Access, Import, Instantiate, Call»" size="130,10" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="114,96" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,201"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="/Experimentos-Standard::Call->/PSO*/Experimentos-Standard::Instantiate->/PSO*/Experimentos-Soyatec::Import->/PSO" source="//@children.4" target="//@children.1" targetEnd="//@children.4/@sourceConnections.2/@children.2" label="//@children.4/@sourceConnections.2/@children.0" sourceEnd="//@children.4/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="/Experimentos->Standard::Call" source="//@children.4" target="//@children.1" targetEnd="//@children.4/@sourceConnections.2/@children.2" label="//@children.4/@sourceConnections.2/@children.0" sourceEnd="//@children.4/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Instantiate, Call»" size="98,10" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="99,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="89,0" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="132,386"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
@@ -158,7 +158,7 @@
       <children xsi:type="editmodel:MethodEditModel" name="main" id="/LDR#main([Ljava.lang.String;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="/LDR-Standard::Call->/PSO*/LDR-Standard::Instantiate->/PSO*/LDR-Soyatec::Import->/PSO" source="//@children.5" target="//@children.1" targetEnd="//@children.5/@sourceConnections.0/@children.2" label="//@children.5/@sourceConnections.0/@children.0" sourceEnd="//@children.5/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="/LDR->Standard::Call" source="//@children.5" target="//@children.1" targetEnd="//@children.5/@sourceConnections.0/@children.2" label="//@children.5/@sourceConnections.0/@children.0" sourceEnd="//@children.5/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Instantiate, Call»" size="98,10" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="68,62" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,281"/>

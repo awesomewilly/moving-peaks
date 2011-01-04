@@ -33,6 +33,7 @@ public class PSO {
 	 */
 	private static movmain instance = new movmain();
 	 
+	private double error = 0.0;
 	
 	
 	/*
@@ -46,11 +47,11 @@ public class PSO {
 	/**
 	 * @uml.property  name="rCognitivo"
 	 */
-	double rCognitivo = 1; //ratio cognitivo,
+	double rCognitivo = 0; //ratio cognitivo,
 	/**
 	 * @uml.property  name="rSocial"
 	 */
-	double rSocial = 0.5; //ratio social,
+	double rSocial = 0; //ratio social,
 	
 	/*
 	 * Este valor es el encargado de elegir lo grande que será la vecindad, se cogeran todas las 
@@ -360,7 +361,7 @@ public class PSO {
 	}
 	
 	
-	public Particula psoLocal() {
+	public Particula psoGlobal() {
 		Particula[] nube = new Particula[this.getNumParticulas()];
 		nube = this.inicializacion(this.getNumParticulas());
 		double ratios [][] = this.calcularRatios(nube);
@@ -408,6 +409,10 @@ public class PSO {
 			  instance.getFktnLib().change_peaks();
 //			  System.out.println("ERROR:" + instance.getFktnLib().get_offline_error());
 			  instance.getFktnLib().setEvals(0);
+			  instance.getFktnLib().set_Avg_error(0);
+              instance.getFktnLib().set_offline_error(0);
+              instance.getFktnLib().set_current_error(0);
+              instance.getFktnLib().set_offline_performance(0);
 			}
 			//System.out.println("NUBE");
 			//mostrarNube(nube);
@@ -446,7 +451,7 @@ public class PSO {
 		//pso.mostrarNube(nube);
 		//pso.mejorSolucionNube(nube);
 		//pso.moverParticulas(nube);
-		Particula part = pso.psoLocal();
+		Particula part = pso.psoGlobal();
 		part.mostrar();
 		System.out.println(instance.getFktnLib().getEvals());
 		//double [] solucion = LDR.ldr(instance, part.getpBest(), part.getpFitness());

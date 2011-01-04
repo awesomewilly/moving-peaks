@@ -16,13 +16,15 @@ public class Experimentos {
 	 */
 
 	PSO pso = new PSO();
-	double sumatorio = 0;
-	double media = 0;
+	private double sumatorio = 0;
+	private double media = 0;
+	private double error = 0.0;
 
 	/* Parametrizamos el porcentaje de vecindad */
 	public void exp1() {
 		// pso.setNumEvaluaciones(2500);
 		pso.setNumEvaluaciones(5000);
+		
 		Particula pBestIteraciones = new Particula();
 		for (int i = 0; i < NUM_EJECUCIONES; i++) {
 			pso.setNumIteraciones(200);
@@ -30,7 +32,7 @@ public class Experimentos {
 			pso.setPorcentajeVecindad(20);
 			// pso.setPorcentajeVecindad(50);
 			// pso.setPorcentajeVecindad(70);
-			Particula part = pso.psoLocal();
+			Particula part = pso.psoGlobal();
 			System.out.println(part.getpFitness());
 			sumatorio += part.pFitness;
 			if (part.getpFitness() > pBestIteraciones.getpFitness()) {
@@ -59,7 +61,7 @@ public class Experimentos {
 			// pso.setrSocial(0.4);
 			// pso.setrSocial(0.6);
 			pso.setrSocial(0.8);
-			Particula part = pso.psoLocal();
+			Particula part = pso.psoGlobal();
 			System.out.println(part.getpFitness());
 			sumatorio += part.pFitness;
 			if (part.getpFitness() > pBestIteraciones.getpFitness()) {
@@ -88,7 +90,7 @@ public class Experimentos {
 			// pso.setrCognitivo(0.5);
 			// pso.setrCognitivo(0.8);
 			// pso.setrCognitivo(1);
-			Particula part = pso.psoLocal();
+			Particula part = pso.psoGlobal();
 			System.out.println(part.getpFitness());
 			sumatorio += part.pFitness;
 			if (part.getpFitness() > pBestIteraciones.getpFitness()) {
@@ -118,7 +120,7 @@ public class Experimentos {
 			pso.setrSocial(0.4);
 			pso.setrCognitivo(0.2);
 			// pso.setrCognitivo(0.5);
-			Particula part = pso.psoLocal();
+			Particula part = pso.psoGlobal();
 			System.out.println(part.getpFitness());
 			sumatorio += part.pFitness;
 			if (part.getpFitness() > pBestIteraciones.getpFitness()) {
