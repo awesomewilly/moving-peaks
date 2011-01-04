@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="909,1165" id="peaks" metadata="uml2-1.0" initialized="true" scrolledY="264" tag="1000" key="32303037303533312D31303030204D50422F766963656E6267">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="909,1165" id="peaks" metadata="uml2-1.0" initialized="true" scrolledY="32" tag="1000" key="32303037303533312D31303030204D50422F766963656E6267">
   <children xsi:type="editmodel:ClassEditModel" name="movmain" location="345,525" size="90,85" id="peaks/movmain" runTimeClassModel="main([Ljava.lang.String;),run([Ljava.lang.String;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="45,36">
@@ -17,7 +17,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="movpeaks" location="50,294" size="144,535" id="peaks/movpeaks" runTimeClassModel="geno_size,peak,free_peaks(),getCurrentPeak(),getMaximumPeak(),init_peaks(),change_peaks(),get_offline_error(),pEAKFUNCTIONSPHERE,movpeaks(IIIDDDDDDDIJ),pEAKFUNCTION1,get_offline_performance(),evals,get_right_peak(),get_avg_error(),get_current_error(),getPeakPositions(),getPeakHeights(),getGeno_size(),eval_movpeaks([D),getMaxHeight(),movpeaks(),pEAKFUNCTIONCONE,printPeakData(),getMaxCoordinate(),get_number_of_evals(),dummy_eval([D),getMinCoordinate()">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="movpeaks" location="50,294" size="144,607" id="peaks/movpeaks" runTimeClassModel="geno_size,peak,free_peaks(),getCurrentPeak(),getMaximumPeak(),init_peaks(),change_peaks(),get_offline_error(),set_current_error(D),pEAKFUNCTIONSPHERE,set_offline_error(D),movpeaks(IIIDDDDDDDIJ),pEAKFUNCTION1,evals,get_offline_performance(),set_offline_performance(D),get_right_peak(),get_avg_error(),get_current_error(),getPeakPositions(),getPeakHeights(),getGeno_size(),eval_movpeaks([D),movpeaks(),getMaxHeight(),printPeakData(),pEAKFUNCTIONCONE,getMaxCoordinate(),set_Avg_error(D),dummy_eval([D),get_number_of_evals(),getMinCoordinate()">
     <children xsi:type="editmodel:CompartmentEditModel" size="121,108">
       <children xsi:type="editmodel:AttributeEditModel" name="evals" id="peaks/movpeaks#evals"/>
       <children xsi:type="editmodel:AttributeEditModel" name="geno_size" id="peaks/movpeaks#geno_size"/>
@@ -26,7 +26,7 @@
       <children xsi:type="editmodel:AttributeEditModel" name="pEAKFUNCTIONSPHERE" id="peaks/movpeaks#pEAKFUNCTIONSPHERE"/>
       <children xsi:type="editmodel:AttributeEditModel" name="peak" id="peaks/movpeaks#peak"/>
     </children>
-    <children xsi:type="editmodel:CompartmentEditModel" size="118,378">
+    <children xsi:type="editmodel:CompartmentEditModel" size="118,450">
       <children xsi:type="editmodel:MethodEditModel" name="change_peaks" id="peaks/movpeaks#change_peaks()"/>
       <children xsi:type="editmodel:MethodEditModel" name="eval_movpeaks" id="peaks/movpeaks#eval_movpeaks([D)"/>
       <children xsi:type="editmodel:MethodEditModel" name="dummy_eval" id="peaks/movpeaks#dummy_eval([D)"/>
@@ -48,19 +48,23 @@
       <children xsi:type="editmodel:MethodEditModel" name="movpeaks" id="peaks/movpeaks#movpeaks(IIIDDDDDDDIJ)"/>
       <children xsi:type="editmodel:MethodEditModel" name="movpeaks" id="peaks/movpeaks#movpeaks()"/>
       <children xsi:type="editmodel:MethodEditModel" name="printPeakData" id="peaks/movpeaks#printPeakData()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="set_offline_performance" id="peaks/movpeaks#set_offline_performance(D)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="set_Avg_error" id="peaks/movpeaks#set_Avg_error(D)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="set_offline_error" id="peaks/movpeaks#set_offline_error(D)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="set_current_error" id="peaks/movpeaks#set_current_error(D)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="peaks/Basis_Function@bf+peaks/movpeaks@" source="//@children.1" target="//@children.8" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="144,38" id="peaks/Basis_Function@bf+peaks/movpeaks@|peaks/movpeaks#" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" name="bf" location="0,38" id="peaks/Basis_Function@bf+peaks/movpeaks@|peaks/Basis_Function#bf" multiplicityLabel="//@children.1/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.1/@sourceConnections.0/@children.2/@children.0" navigable="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="bf" location="4,38" id="peaks/Basis_Function@bf+peaks/movpeaks@|peaks/Basis_Function#bf" multiplicityLabel="//@children.1/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.1/@sourceConnections.0/@children.2/@children.0" navigable="true">
         <children xsi:type="editmodel:LabelEditModel" name=" + bf" location="408,315" size="19,10" anchorKind="LastPart"/>
         <children xsi:type="editmodel:LabelEditModel" name="1" location="422,339" size="5,10" anchorKind="LastPart"/>
       </children>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:AssociationEditModel" id="peaks/Peak_Function@pf+peaks/movpeaks@" source="//@children.1" target="//@children.6" targetEnd="//@children.1/@sourceConnections.1/@children.2" label="//@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,33" id="peaks/Peak_Function@pf+peaks/movpeaks@|peaks/movpeaks#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,37" id="peaks/Peak_Function@pf+peaks/movpeaks@|peaks/movpeaks#" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" name="pf" location="0,59" id="peaks/Peak_Function@pf+peaks/movpeaks@|peaks/Peak_Function#pf" multiplicityLabel="//@children.1/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.1/@sourceConnections.1/@children.2/@children.0" navigable="true">
         <children xsi:type="editmodel:LabelEditModel" name=" + pf" location="389,92" size="19,10" anchorKind="LastPart"/>
         <children xsi:type="editmodel:LabelEditModel" name="1" location="403,116" size="5,10" anchorKind="LastPart"/>
