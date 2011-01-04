@@ -631,5 +631,21 @@ public class movpeaks {
 		evals = i;
 	
 	}
+	
+	public void set_Avg_error(double avg_error) {
+        this.avg_error = avg_error;
+}
+
+public void set_current_error(double avg_error) {
+        this.current_error = avg_error;
+}
+
+public void set_offline_error(double avg_error) {
+        this.offline_error = avg_error;
+}
+
+public void set_offline_performance(double avg_error) {
+        this.offline_performance = avg_error;
+}
 
 } //movpeaks
